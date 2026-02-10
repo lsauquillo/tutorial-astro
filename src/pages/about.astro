@@ -1,11 +1,13 @@
 ---
 const pageTitle = "Sobre mi";
+
 const identity = {
   firstName: "Sarah",
   country: "Canada",
   occupation: "Escritor técnico",
   hobbies: ["fotografia", "observación de aves", "peñarol"],
 };
+
 const skills = [
   "HTML",
   "CSS",
@@ -14,6 +16,10 @@ const skills = [
   "Astro",
   "Redacción de documentos",
 ];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="es">
@@ -51,5 +57,8 @@ const skills = [
 <ul>
   {skills.map((skill) => <li>{skill}</li>)}
 </ul>
+{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+{finished && <p>¡He terminado este tutorial!</p>}
+{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
   </body>
 </html>
