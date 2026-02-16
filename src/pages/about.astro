@@ -1,9 +1,7 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
-
-const pageTitle = "Sobre mi";
+const pageTitle = "Mi Blog de Astro aprendizaje";
 
 const identity = {
   firstName: "Sarah",
@@ -30,11 +28,9 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
+
+ 
+    
 
     <style define:vars={{ skillColor, fontWeight, textCase }}>
       h1 {
@@ -47,11 +43,13 @@ const textCase = "uppercase";
         text-transform: var(--textCase);
       }
     </style>
-  </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <h2>... ¡y mi nuevo sitio Astro!</h2>
+  
+ 
+   
+    <BaseLayout title={pageTitle}>
+
+      <h1>{pageTitle}</h1>
+      <h2>... !Y mi nuevo sitio Astro!</h2>
 
     <p>
       Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
@@ -89,10 +87,8 @@ const textCase = "uppercase";
         <p>Mi objetivo no son 3 días.</p>
       )
     }
-    <Footer />
+   
+ </BaseLayout>  
 
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+   
+
